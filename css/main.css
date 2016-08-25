@@ -215,7 +215,23 @@ body {
 }
 
 .navbar-toggle .icon-bar {
-  background-color: #fff;
+  background-color: #FFF;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+.navbar-toggle.active .icon-bar-1 {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar-2 {
+  background-color: transparent;
+}
+
+.navbar-toggle.active .icon-bar-3 {
+  top: -6px;
+  transform: rotate(-45deg);
 }
 
 #wrapper {

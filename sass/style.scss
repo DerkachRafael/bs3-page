@@ -150,6 +150,8 @@ $body-color:#858585;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+
 a{
 	cursor:pointer;
 	text-decoration: none;
@@ -188,11 +190,27 @@ body {
 	font-weight: 400;
 	font-size:em(24px);
 }
-.navbar-toggle {
-	.icon-bar{
-		background-color: #fff;
-	}
+
+.navbar-toggle .icon-bar {
+	background-color: #FFF;
+	position: relative;
+	transition: all 500ms ease-in-out;
 }
+
+.navbar-toggle.active .icon-bar-1 {
+	top: 6px;
+	transform: rotate(45deg);
+}
+
+.navbar-toggle.active .icon-bar-2 {
+	background-color: transparent;
+}
+
+.navbar-toggle.active .icon-bar-3 {
+	top: -6px;
+	transform: rotate(-45deg);
+}
+
 #wrapper{
 	padding: 0;
 }
@@ -513,8 +531,8 @@ body {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 input[type='number'] {
-    -moz-appearance: textfield;
+	-moz-appearance: textfield;
 }

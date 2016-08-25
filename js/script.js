@@ -4,23 +4,29 @@ $(function() {
 		$('body').addClass('loaded');
 	}, 1500);
 
+			  $(".navbar-toggle").on("click", function () {
+				    $(this).toggleClass("active");
+			  });
+
+	
+
 // Check the captcha
 function checkCaptcha(value, validator, $field) {
-    var items = $('#captchaOperation').html().split(' '),
-        sum   = parseInt(items[0]) + parseInt(items[2]);
-    return value == sum;
+	var items = $('#captchaOperation').html().split(' '),
+	sum   = parseInt(items[0]) + parseInt(items[2]);
+	return value == sum;
 }
  // Generate a simple captcha
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    function generateCaptcha() {
-        $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-    }
-    generateCaptcha();
+ function randomNumber(min, max) {
+ 	return Math.floor(Math.random() * (max - min + 1) + min);
+ }
+ function generateCaptcha() {
+ 	$('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+ }
+ generateCaptcha();
 //modal
 $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').focus()
+	$('#myInput').focus()
 });
 	//SVG Fallback
 	if(!Modernizr.svg) {
@@ -48,7 +54,7 @@ $('#myModal').on('shown.bs.modal', function () {
 });
 
 // create angular app
-	var validationApp = angular.module('validationApp', []);
+var validationApp = angular.module('validationApp', []);
 
 	// create angular controller
 	validationApp.controller('mainController', function($scope) {
